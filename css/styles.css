@@ -1,0 +1,215 @@
+/* Clean Modern Light Mode Stylesheet for REP (Rodriguez Equipment Parts) */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap');
+
+:root {
+  --rep-red: #E31E24;
+  --rep-red-hover: #C41318;
+  --rep-red-glow: rgba(227, 30, 36, 0.2);
+  --rep-bg-main: #FFFFFF;
+  --rep-bg-alt: #F8FAFC;
+  --rep-bg-subtle: #F1F5F9;
+  --rep-border: #E2E8F0;
+  --rep-border-focus: #E31E24;
+  --rep-text-heading: #0F172A;
+  --rep-text-body: #334155;
+  --rep-text-muted: #64748B;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--rep-bg-main);
+  color: var(--rep-text-body);
+  overflow-x: hidden;
+}
+
+.font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-tech {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E31E24;
+}
+
+/* Clean Light Grid Background Pattern (Flat and Bright) */
+.bg-grid-pattern {
+  background-color: #FFFFFF;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+}
+
+/* Subtle Light Card Hover Effect */
+.card-hover-effect {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 30, 36, 0.45);
+  box-shadow: 0 14px 28px -8px rgba(227, 30, 36, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Soft Red Badge Glow for Light Mode */
+.badge-glow {
+  box-shadow: 0 2px 10px rgba(227, 30, 36, 0.18);
+}
+
+/* 3D Technical Presentation Card (SIS Caterpillar) */
+.card-3d-tech {
+  background: linear-gradient(155deg, #ffffff 0%, #fbfcfd 50%, #f1f5f9 100%);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 8px 24px -4px rgba(15, 23, 42, 0.08),
+    0 24px 38px -12px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: perspective(1000px) translateZ(0);
+}
+
+.card-3d-tech:hover {
+  transform: perspective(1000px) translateY(-4px) scale(1.008);
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 16px 32px -4px rgba(227, 30, 36, 0.12),
+    0 32px 50px -12px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(227, 30, 36, 0.4);
+}
+
+/* Glowing Primary Button */
+.btn-rep-primary {
+  background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+  color: #FFFFFF !important;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-rep-primary:hover {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  box-shadow: 0 4px 15px rgba(227, 30, 36, 0.35);
+}
+
+.btn-rep-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+}
+
+.btn-rep-primary:hover::after {
+  left: 140%;
+}
+
+/* Secondary Slate Button */
+.btn-rep-secondary {
+  background-color: #475569;
+  color: #FFFFFF !important;
+  transition: all 0.2s ease;
+}
+
+.btn-rep-secondary:hover {
+  background-color: #334155;
+  box-shadow: 0 4px 12px rgba(51, 65, 85, 0.25);
+}
+
+/* WhatsApp Pulse Animation */
+@keyframes rep-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: rep-pulse 2s infinite;
+}
+
+/* Toast animation */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-enter {
+  animation: slideInUp 0.3s ease-out forwards;
+}
+
+/* Scroll Reveal / Fade-in up Animation */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Brand Logos Ribbon Styling - Full Color & 100% Crisp */
+.brand-logo-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.brand-logo-card:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.brand-logo-img {
+  filter: none !important;
+  opacity: 1 !important;
+  transition: transform 0.3s ease;
+}
+
+/* Subtle Scroll Indicator Bounce */
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-indicator-bounce {
+  animation: subtle-bounce 2.2s infinite ease-in-out;
+}
